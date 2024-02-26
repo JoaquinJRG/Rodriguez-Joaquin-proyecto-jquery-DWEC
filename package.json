@@ -1,0 +1,28 @@
+{
+  "name": "proyecto-jquery",
+  "version": "1.0.0",
+  "description": "proyecto jquery gatos",
+  "scripts": {
+    "parcel:desarrollo": "parcel src/index.html --dist-dir desarrollo",
+    "parcel:produccion": "parcel build src/index.html --public-url ./ --dist-dir produccion",
+    "limpia": "rimraf desarrollo produccion .parcel-cache",
+    "tailwind:una-vez": "tailwindcss -i ./src/styles/input.css -o ./src/styles/output.css",
+    "tailwind:vigila": "tailwindcss -i ./src/styles/input.css -o ./src/styles/output.css --watch",
+    "des": "npm-run-all -p tailwind:vigila parcel:desarrollo",
+    "prod": "npm-run-all limpia tailwind:una-vez parcel:produccion",
+    "ordena": "prettier --write src"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "npm-run-all": "^4.1.5",
+    "parcel": "^2.11.0",
+    "prettier": "^3.2.5",
+    "prettier-plugin-tailwindcss": "^0.5.11",
+    "rimraf": "^5.0.5",
+    "tailwindcss": "^3.4.1"
+  },
+  "dependencies": {
+    "jquery": "^3.7.1"
+  }
+}
