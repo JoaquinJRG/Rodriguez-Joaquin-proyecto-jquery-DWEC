@@ -1,16 +1,17 @@
-//Variables
-let page = 0;
-let likeCount = 0;
-let disLikeCount = 0;
-let favoriteCount = 0;
-let isLoading = false;
-let order = "ASC";
-let layout = "list";
-
-const URL_CAT_BREEDS = "https://catfact.ninja/breeds";
-const APIKEY = "live_UvqIX8Gi0IMK58RK5YRAwMnVLleLHYeyPt7PeHvk9iuo2M9Cec9f6kJti7GoYb4A";
 
 $(() => {
+
+  //Variables
+  let page = 0;
+  let likeCount = 0;
+  let disLikeCount = 0;
+  let favoriteCount = 0;
+  let isLoading = false;
+  let order = "ASC";
+  let layout = "list";
+
+  const URL_CAT_BREEDS = "https://catfact.ninja/breeds";
+  const APIKEY = "live_UvqIX8Gi0IMK58RK5YRAwMnVLleLHYeyPt7PeHvk9iuo2M9Cec9f6kJti7GoYb4A";
 
   //Cargar datos al inicio
   loadData();
@@ -150,7 +151,7 @@ function showDataList(res) {
             <img class="w-80 h-auto" src="${obj.url}">
             <div class='flex items-center justify-between'>
               <p>Raza: ${obj.breeds[0].name}</p>
-              <a class=' rounded-md p-1 text-white bg-black hover:scale-110 transition' >
+              <a class=' rounded-md p-1 text-white bg-black hover:scale-110 transition cursor-pointer' >
                 Datos
               </a>
             </div>
@@ -183,7 +184,7 @@ function showDataTable(res) {
         <img class="w-80 h-auto" src="${obj.url}">
         <div class='flex items-center justify-between'>
           <p>Raza: ${obj.breeds[0].name}</p>
-          <a class=' rounded-md p-1 text-white bg-black hover:scale-110 transition' >
+          <a class=' rounded-md p-1 text-white bg-black hover:scale-110 transition cursor-pointer' >
             Datos
           </a>
         </div>
