@@ -39,8 +39,12 @@
     </div>
 
     <div class="flex flex-row gap-3">
-      <i data-feather="list" class="border border-black p-1 rounded-md cursor-pointer w-8 h-8 hover:scale-110 transition"></i>
-      <i data-feather="table" class="border border-black p-1 rounded-md cursor-pointer w-8 h-8 hover:scale-110 transition"></i>
+      <button id="listLayout">
+        <i data-feather="list" class="border border-black p-1 rounded-md cursor-pointer w-8 h-8 hover:scale-110 transition"></i>
+      </button>
+      <button id="tableLayout">
+        <i data-feather="table" class="border border-black p-1 rounded-md cursor-pointer w-8 h-8 hover:scale-110 transition"></i>
+      </button>
     </div>
   </header>
 
@@ -49,11 +53,10 @@
     <h1 class="text-4xl text-center my-6">CAT API 🐈</h1>
     <div id="data-container" class="flex flex-col justify-center items-center">
 
-      <ul id="list" class="max-w-screen-sm m-auto my-2">
+      <ul id="list" class="flex flex-col justify-center items-center max-w-screen-sm m-auto my-2">
       </ul>
 
-      <div></div>
-
+      <div id="table" class="flex flex-wrap justify-center items-start m-auto"></div>
 
       <!--Loader-->
       <div role="status">
@@ -72,6 +75,7 @@
     </div>
 
   </main>
+  
 
 </body>
 
