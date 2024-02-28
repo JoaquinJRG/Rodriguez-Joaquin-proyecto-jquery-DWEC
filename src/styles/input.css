@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.liked svg{
+    fill: #16a34a;
+}
+
+.disliked svg{
+    fill: red;
+}
+
+.favorite svg {
+    fill: yellow;
+}
