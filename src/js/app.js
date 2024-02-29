@@ -1,17 +1,15 @@
+//Variables
+let page = 0;
+let likeCount = 0;
+let disLikeCount = 0;
+let favoriteCount = 0;
+let isLoading = false;
+let order = "ASC";
+let layout = "list";
+
+const APIKEY = "live_UvqIX8Gi0IMK58RK5YRAwMnVLleLHYeyPt7PeHvk9iuo2M9Cec9f6kJti7GoYb4A";
 
 $(() => {
-
-  //Variables
-  let page = 0;
-  let likeCount = 0;
-  let disLikeCount = 0;
-  let favoriteCount = 0;
-  let isLoading = false;
-  let order = "ASC";
-  let layout = "list";
-
-  const URL_CAT_BREEDS = "https://catfact.ninja/breeds";
-  const APIKEY = "live_UvqIX8Gi0IMK58RK5YRAwMnVLleLHYeyPt7PeHvk9iuo2M9Cec9f6kJti7GoYb4A";
 
   //Cargar datos al inicio
   loadData();
@@ -95,6 +93,7 @@ function loadData() {
 
   $.get(`https://api.thecatapi.com/v1/images/search?limit=10&has_breeds=1&order=${order}&page=${page}&api_key=${APIKEY}`)
     .done((res) => {
+
       //Eliminar elementos de la lista
       $("#list").html("");
       $("#table").html(""); 
@@ -123,7 +122,7 @@ function loadMoreData() {
 
     $.get(`https://api.thecatapi.com/v1/images/search?limit=10&has_breeds=1&order=${order}&page=${page}&api_key=${APIKEY}`)
       .done((res) => {
-
+        
         if (layout == "list") {
           showDataList(res); 
         } else {
@@ -151,12 +150,12 @@ function showDataList(res) {
             <img class="w-80 h-auto" src="${obj.url}">
             <div class='flex items-center justify-between'>
               <p>Raza: ${obj.breeds[0].name}</p>
-              <a class=' rounded-md p-1 text-white bg-black hover:scale-110 transition cursor-pointer' >
+              <a href='datos.html?breed=${obj.breeds[0].id}' class='rounded-md p-1 text-white bg-black hover:scale-110 transition cursor-pointer' >
                 Datos
               </a>
             </div>
             <div class="flex gap-2 items-center justify-center">
-              <button name="like">
+              <button  name="like">
                 <i data-feather="thumbs-up" class="cursor-pointer hover:scale-110 "></i>
               </button>
               <button name="dislike">
@@ -184,7 +183,7 @@ function showDataTable(res) {
         <img class="w-80 h-auto" src="${obj.url}">
         <div class='flex items-center justify-between'>
           <p>Raza: ${obj.breeds[0].name}</p>
-          <a class=' rounded-md p-1 text-white bg-black hover:scale-110 transition cursor-pointer' >
+          <a href='datos.html?breed=${obj.breeds[0].name}' class=' rounded-md p-1 text-white bg-black hover:scale-110 transition cursor-pointer' >
             Datos
           </a>
         </div>

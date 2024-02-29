@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proyecto Jquery Gatos</title>
+  <link rel="stylesheet" href="styles/output.css" />
+  <script src="../node_modules/feather-icons/dist/feather.js"></script>
+  <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="js/datos.js" defer></script>
+</head>
+
+<body>
+
+  <!--Header-->
+  <header class="flex items-center justify-evenly bg-white py-5 shadow-md sticky top-0">
+    <a href="index.html" class="border border-black p-1 rounded-md cursor-pointer w-8 h-8 hover:scale-110 transition">
+      <i data-feather="corner-down-left"></i>
+    </a>
+    <h1 class="text-4xl text-center">CAT API 🐈</h1>
+    <h2 id="breedName"></h2>
+  </header>
+
+  <!--Main-->
+  <main class="flex flex-col justify-center items-center gap-6 mt-10 max-w-screen-sm m-auto">
+    <div id="breed" class="text-2xl"></div>
+    <div id="fact" class="italic text-center"></div>
+    <div id="images" class="my-5"></div>
+
+    <div class="mx-3 flex flex-col gap-2">
+      <div id="description">
+        <h2 class="font-bold">Descripción:</h2>
+      </div>
+      <div id="temperament">
+        <h2 class="font-bold">Temperamento:</h2>
+      </div>
+      <div id="origin">
+        <h2 class="font-bold">Origen:</h2>
+      </div>
+    </div>
+
+  </main>
+
+</body>
+
+</html>

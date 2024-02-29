@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "proyecto jquery gatos",
   "scripts": {
-    "parcel:desarrollo": "parcel src/index.html --dist-dir desarrollo",
-    "parcel:produccion": "parcel build src/index.html --public-url ./ --dist-dir produccion",
+    "parcel:desarrollo": "parcel src/index.html src/datos.html --dist-dir desarrollo",
+    "parcel:produccion": "parcel build src/index.html src/datos.html --public-url ./ --dist-dir produccion",
     "limpia": "rimraf desarrollo produccion .parcel-cache",
     "tailwind:una-vez": "tailwindcss -i ./src/styles/input.css -o ./src/styles/output.css",
     "tailwind:vigila": "tailwindcss -i ./src/styles/input.css -o ./src/styles/output.css --watch",
